@@ -1,0 +1,315 @@
+/* Global */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f8f6;
+    color: #1a1a1a;
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+}
+
+/* Main layout */
+main {
+    margin-left: 220px;
+    padding: 40px 60px;
+    flex: 1;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.logo img {
+    width: 260px;
+    height: auto;
+}
+
+/* Gallery */
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 30px;
+    flex-wrap: wrap;
+}
+
+/* Thumbnails / Zoomable images */
+.thumbnail,
+.zoomable {
+    width: 150px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.thumbnail:hover,
+.zoomable:hover {
+    transform: scale(2);
+    z-index: 9999;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+}
+
+.photo-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(26, 26, 26, 0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+}
+
+.lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Description block */
+.description {
+    text-align: center;
+    padding: 20px;
+    background-color: #e0e7ea;
+}
+
+/* Comments */
+.comments {
+    background-color: #d9edf7;
+    padding: 20px;
+    margin: 20px;
+    border-left: 5px solid #31708f;
+}
+
+.comment {
+    margin-bottom: 20px;
+}
+
+.reply-link {
+    display: inline-block;
+    margin-top: 8px;
+    color: #2e6b4a;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.reply-link:hover {
+    text-decoration: underline;
+}
+
+/* Comment form */
+#comment-form {
+    background-color: #ffffff;
+    border: 1px solid #bfe3f5;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#comment-form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#comment-form input,
+#comment-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #8ccf9f;
+    border-radius: 4px;
+}
+
+#comment-form button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #2e6b4a;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#comment-form button:hover {
+    background-color: #1f4d3a;
+}
+
+/* Footer socials */
+footer .socials {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    background-color: #cccdb1;
+}
+
+footer .socials img {
+    width: 32px;
+    height: 32px;
+}
+
+/* Video in menu */
+.menu-video {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    width: 200px;
+}
+
+.menu-video video {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+    main {
+        margin-left: 0;
+    }
+    .thumbnail:hover,
+    .zoomable:hover {
+        transform: scale(1.5);
+    }
+}
+
+/* Intro screen overlay */
+#introScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #045d56;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Intro box */
+#introBox {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    padding: 30px 40px;
+    text-align: center;
+    width: 350px;
+    border: 3px solid #00ffc3;
+}
+
+#introBox h2 {
+    margin-bottom: 15px;
+    font-size: 1.4em;
+    color: #045d56;
+}
+
+#introBox p {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#introBox input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 1em;
+}
+
+#introBox button {
+    background-color: #00ffc3;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#introBox button:hover {
+    background-color: #00d9a8;
+}
+
+/* Greeting — centered and styled */
+#personalGreeting {
+    text-align: center;
+    font-size: 1.6em;
+    font-weight: 700;
+    color: #045d56;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/* Staff section layout */
+.staff-member {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    background-color: #e0e7ea;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Staff photo */
+.staff-photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Staff info text */
+.staff-info {
+    text-align: left;
+    flex: 1;
+}
+
+.staff-info h2 {
+    margin-top: 0;
+    color: #045d56;
+}
+
+
+
