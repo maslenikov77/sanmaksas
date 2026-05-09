@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lochquarry Outdoor Centre</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Typed.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="ground.html">Ground</a></li>
+            <li><a href="water.html">Water</a></li>
+            <li><a href="rope.html">Rope</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <header>
+            <div class="logo">
+                <img src="images/logo/logo.png" alt="Lochquarry Logo">
+            </div>
+
+            <div class="description">
+                <h1>Welcome <span id="typed"></span></h1>
+            </div>
+
+            <div id="dateTime" class="date-time"></div>
+        </header>
+
+        <section class="gallery">
+            <h2>Nature Gallery</h2>
+            <img src="images/nature/nature_1.jpg" alt="photo 1" class="thumbnail">
+            <img src="images/nature/nature_2.jpg" alt="photo 2" class="thumbnail">
+            <img src="images/nature/nature_3.jpg" alt="photo 3" class="thumbnail">
+        </section>
+
+        <section class="description">
+            <hr>
+            <h2>About Our Activities</h2>
+            <p>Lochquarry Outdoor Centre provides outdoor activities for young people aged 6–18.</p>
+            <p>The activities that the centre offers can be split into three main categories: land-based, water-based and rope-based.</p>
+        </section>
+
+        <aside class="comments">
+            <hr>
+            <h2>Comments</h2>
+            <p>‘We had a great time and loved all the different activities that we did’ − 8th Gourock Guides</p>
+            <p>‘I would definitely come back’ − Kelly, aged 9</p>
+            <p>‘Five stars, it was great’ − Joe, aged 14</p>
+            <p>‘The kids had a ball and didn’t want to leave’ − Mr Evans, PE teacher</p>
+        </aside>
+
+        <footer>
+            <div class="socials">
+                <a href="https://www.facebook.com/" target="_blank">
+                    <img src="images/socialmedia/facebook.webp" alt="Visit our Facebook page">
+                </a>
+                <a href="https://www.instagram.com/" target="_blank">
+                    <img src="images/socialmedia/instagram.webp" alt="Visit our Instagram profile">
+                </a>
+                <a href="https://www.youtube.com/" target="_blank">
+                    <img src="images/socialmedia/youtube.webp" alt="Visit our YouTube channel">
+                </a>
+                <a href="https://www.tiktok.com/" target="_blank">
+                    <img src="images/socialmedia/tiktok.webp" alt="Visit our TikTok page">
+                </a>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // Typed.js animation
+        var typed = new Typed("#typed", {
+            strings: [
+                "to Lochquarry Outdoor Centre!",
+                "to your next adventure!",
+                "to the nature gallery!"
+            ],
+            typeSpeed: 100,
+            backSpeed: 50,
+            loop: true
+        });
+
+        // Updating date and time
+        const dateTimeElement = document.getElementById("dateTime");
+
+        function updateDateTimeEnglish() {
+            const now = new Date();
+            const options = {
+                timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+            };
+
+            dateTimeElement.textContent = now.toLocaleString('en-GB', options);
+        }
+
+        updateDateTimeEnglish();
+        setInterval(updateDateTimeEnglish, 1000);
+    </script>
+
+</body>
+</html>

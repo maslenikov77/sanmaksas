@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lochquarry Outdoor Centre</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Typed.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="water.html">Water</a></li>
+            <li><a href="ground.html">Ground</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <header>
+            <div class="logo">
+                <img src="images/logo/logo.png" alt="Lochquarry Logo">
+            </div>
+
+            <section class="description">
+                <h1>Welcome <span id="typed"></span></h1>
+            </section>
+
+            <div id="dateTime" class="date-time"></div>
+        </header>
+
+        <section class="gallery">
+            <h2>Rope Activities Gallery</h2>
+            <img src="images/activities/rope/abseiling_1.jpg" alt="photo 1" class="thumbnail">
+            <img src="images/activities/rope/abseiling_2.jpg" alt="photo 2" class="thumbnail">
+            <img src="images/activities/rope/climbing_1.jpg" alt="photo 3" class="thumbnail">
+            <img src="images/activities/rope/climbing_2.jpg" alt="photo 4" class="thumbnail">
+            <img src="images/activities/rope/climbing_3.jpg" alt="photo 5" class="thumbnail">
+            <img src="images/activities/rope/pole_climb_1.jpg" alt="photo 6" class="thumbnail">
+            <img src="images/activities/rope/pole_climb_2.jpg" alt="photo 7" class="thumbnail">
+        </section>
+
+        <section class="description">
+            <h1>Rope Based Activities</h1>
+            <p>All rope-based activities take place on site with full safety equipment provided.</p>
+            <hr>
+
+            <h2>Climbing</h2>
+            <p>Scale the highs of one of the local quarry slabs.</p>
+            <p>Max group size 8.</p>
+            <p>Ages 8+</p>
+            <hr>
+
+            <h2>Abseiling</h2>
+            <p>Take the scary step and abseil from the top of one of the local quarry slabs.</p>
+            <p>There is a lovely view... if you are brave enough to look down!</p>
+            <p>Max group size 8.</p>
+            <p>Ages 8+</p>
+            <hr>
+
+            <h2>Pole Climb</h2>
+            <p>Ever wondered how telephone engineers get to the top of the telephone poles?</p>
+            <p>Well, here’s your chance to find out.</p>
+            <p>Group size 8.</p>
+            <p>Ages 8+</p>
+        </section>
+
+        <aside class="comments">
+            <hr>
+            <h2>Comments</h2>
+            <p>‘I was really scared about the abseiling but the instructor Mike was really encouraging and helped me do it, thanks Mike’ − Sophie, aged 10</p>
+        </aside>
+
+        <footer>
+            <div class="socials">
+                <a href="https://www.facebook.com/" target="_blank">
+                    <img src="images/socialmedia/facebook.webp" alt="Visit our Facebook page">
+                </a>
+                <a href="https://www.instagram.com/" target="_blank">
+                    <img src="images/socialmedia/instagram.webp" alt="Visit our Instagram profile">
+                </a>
+                <a href="https://www.youtube.com/" target="_blank">
+                    <img src="images/socialmedia/youtube.webp" alt="Visit our YouTube channel">
+                </a>
+                <a href="https://www.tiktok.com/" target="_blank">
+                    <img src="images/socialmedia/tiktok.webp" alt="Visit our TikTok page">
+                </a>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // Typed.js animation
+        var typed = new Typed("#typed", {
+            strings: [
+                "to the Rope Activities!",
+                "to Lochquarry Outdoor Centre!",
+                "to your next adventure!"
+            ],
+            typeSpeed: 100,
+            backSpeed: 50,
+            loop: true
+        });
+
+        // Updating date and time
+        const dateTimeElement = document.getElementById("dateTime");
+
+        function updateDateTimeEnglish() {
+            const now = new Date();
+            const options = {
+                timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+            };
+
+            dateTimeElement.textContent = now.toLocaleString('en-GB', options);
+        }
+
+        updateDateTimeEnglish();
+        setInterval(updateDateTimeEnglish, 1000);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lochquarry Outdoor Centre</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Typed.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="water.html">Water</a></li>
+            <li><a href="rope.html">Rope</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div id="personalGreeting"></div>
+
+        <header>
+            <div class="logo">
+                <img src="images/logo/logo.png" alt="Lochquarry Logo">
+            </div>
+
+            <!-- Heading with Typed.js -->
+            <h1>Welcome <span id="typed"></span></h1>
+
+            <div id="dateTime" class="date-time"></div>
+        </header>
+
+        <section class="description">
+            <hr>
+            <h2>Site Information</h2>
+
+            <img src="images/activities/land/archery_1.jpg" alt="photo 1" class="thumbnail">
+            <img src="images/activities/land/archery_2.jpg" alt="photo 2" class="thumbnail">
+            <img src="images/activities/land/axe_1.jpg" alt="photo 3" class="thumbnail">
+            <img src="images/activities/land/axe_2.jpg" alt="photo 4" class="thumbnail">
+            <img src="images/activities/land/hillwalking_1.jpg" alt="photo 5" class="thumbnail">
+            <img src="images/activities/land/hillwalking_2.jpg" alt="photo 6" class="thumbnail">
+            <img src="images/activities/land/hillwalking_3.jpg" alt="photo 7" class="thumbnail">
+            <img src="images/activities/land/orienteering_1.jpg" alt="photo 8" class="thumbnail">
+            <img src="images/activities/land/orienteering_2.jpg" alt="photo 9" class="thumbnail">
+        </section>
+
+        <section class="description">
+            <hr>
+            <h2>Land Based Activities</h2>
+            <p>Visitors can take part in a wide range of land-based activities on and off site.</p>
+
+            <hr>
+            <h2>Hillwalking</h2>
+            <p>From short walks around the site to Munro-bagging expeditions, Lochquarry has it all!</p>
+            <p>Walks can be tailored to suit any age or experience of groups and can last from one hour to all day adventures.</p>
+            <p>Max group size: 12</p>
+            <p>Ages: 6+</p>
+
+            <hr>
+            <h2>Archery</h2>
+            <p>Are you the next Robin Hood?</p>
+            <p>Learn to hold a bow and fire an arrow and take part in fast and fun shootout competitions.</p>
+            <p>Max group size: 6</p>
+            <p>Ages: 6+</p>
+
+            <hr>
+            <h2>Orienteering</h2>
+            <p>Set in the centre’s grounds, find all the markers and make it back in time to show off your superior navigation knowledge.</p>
+            <p>Groups of 2+, one map per group.</p>
+            <p>Ages: 6+</p>
+
+            <hr>
+            <h2>Axe Throwing</h2>
+            <p>Take yourself back to a time of Vikings and have a go at throwing an axe.</p>
+            <p>Try to hit the target — better yet, throw yourself a bullseye.</p>
+            <p>Max group size: 6</p>
+            <p>Ages: 10+</p>
+        </section>
+
+        <aside class="comments">
+            <hr>
+            <h2>Comments</h2>
+            <p>‘The archery was brilliant, but not as good as axe throwing. I never thought we’d be allowed to do that! I got one of my axes right in the middle of the target.’ − Scott, aged 13</p>
+        </aside>
+
+        <footer>
+            <div class="socials">
+                <a href="https://www.facebook.com/" target="_blank">
+                    <img src="images/socialmedia/facebook.webp" alt="Visit our Facebook page">
+                </a>
+                <a href="https://www.instagram.com/" target="_blank">
+                    <img src="images/socialmedia/instagram.webp" alt="Visit our Instagram profile">
+                </a>
+                <a href="https://www.youtube.com/" target="_blank">
+                    <img src="images/socialmedia/youtube.webp" alt="Visit our YouTube channel">
+                </a>
+                <a href="https://www.tiktok.com/" target="_blank">
+                    <img src="images/socialmedia/tiktok.webp" alt="Visit our TikTok page">
+                </a>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // Typed.js animation
+        var typed = new Typed("#typed", {
+            strings: [
+                "to Lochquarry Outdoor Centre!",
+                "to your next adventure!",
+                "to the land activities section!"
+            ],
+            typeSpeed: 100,
+            backSpeed: 50,
+            loop: true
+        });
+
+        // Updating date and time
+        const dateTimeElement = document.getElementById("dateTime");
+
+        function updateDateTimeEnglish() {
+            const now = new Date();
+            const options = {
+                timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+            };
+
+            dateTimeElement.textContent = now.toLocaleString('en-GB', options);
+        }
+
+        updateDateTimeEnglish();
+        setInterval(updateDateTimeEnglish, 1000);
+    </script>
+
+</body>
+</html>
